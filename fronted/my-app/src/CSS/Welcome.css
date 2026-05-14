@@ -1,0 +1,62 @@
+.welcome-screen {
+  /* שימוש ב-vw/vh מבטיח פריסה על כל רוחב וגובה המסך */
+  width: 100vw;
+  min-height: 100vh; 
+  
+  /* ממרכז את התוכן */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* צבע רקע אחיד או גרדיאנט שמתפרס על הכל */
+  background: linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
+  
+  /* מבטל השפעה של קונטיינרים הורים במידה ויש */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.welcome-text {
+  text-align: center;
+  /* רוחב מותאם למחשב - לא צר מדי ולא רחב מדי */
+  width: 90%;
+  max-width: 700px;
+  padding: 80px 40px;
+  background: white;
+  border-radius: 40px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.07);
+}
+
+.welcome-text h1 {
+  font-size: 56px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.welcome-text p {
+  font-size: 22px;
+  color: #4b5563;
+  max-width: 500px;
+  margin: 0 auto; /* ממרכז את הטקסט בתוך הכרטיס */
+}
+
+/* התאמה למובייל - כדי שלא יצא מהמסך */
+@media (max-width: 768px) {
+  .welcome-screen {
+    position: relative; /* חוזר למצב רגיל במובייל */
+    width: 100%;
+    min-height: calc(100vh - 70px);
+  }
+  
+  .welcome-text {
+    padding: 40px 20px;
+    border-radius: 24px;
+  }
+
+  .welcome-text h1 {
+    font-size: 32px;
+  }
+}

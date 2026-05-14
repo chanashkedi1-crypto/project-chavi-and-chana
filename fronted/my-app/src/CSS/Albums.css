@@ -1,0 +1,259 @@
+/* ===============================
+   ALBUMS ROOT
+================================ */
+body{
+  background: #f6f7fb;
+}
+.albums-container {
+  background: #f6f7fb;
+  min-height: 100vh;
+  padding: 32px 16px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* מרכז תוכן */
+.albums-container > * {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===============================
+   FILTER
+================================ */
+.album-filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.album-filter-container .search-bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: white;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  min-width: 300px;
+}
+
+.album-filter-container .search-bar input {
+  border: none;
+  outline: none;
+  flex: 1;
+}
+
+.album-filter-container .search-bar select {
+  background: #eef2ff;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+
+/* ===============================
+   ADD ALBUM
+================================ */
+.album-form {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.album-form input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  font-size: 15px;
+}
+
+.album-form button {
+  padding: 0 26px;
+  border-radius: 16px;
+  border: none;
+  background: #5b52e5;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===============================
+   ALBUM LIST
+================================ */
+.album-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;          /* ⬅ במקום grid */
+  flex-direction: column; /* ⬅ רשימה אנכית */
+  gap: 16px;
+}
+
+
+/* ===============================
+   ALBUM ITEM (CARD)
+================================ */
+.album-item {
+  background: #eef2ff;
+  border-radius: 20px;
+  padding: 22px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.album-item span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.album-item button {
+  background: rgba(255,255,255,0.4);
+  border: none;
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+/* ===============================
+   ALBUM PAGE
+================================ */
+.album-page {
+  background: #f6f7fb;
+  min-height: 100vh;
+  padding: 32px 16px;
+}
+
+.album-page > * {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.album-page h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.album-page button {
+  margin-bottom: 16px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ===============================
+   PHOTOS SECTION
+================================ */
+.photos-section {
+  margin-top: 24px;
+}
+
+/* ADD PHOTO */
+.photo-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.photo-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.photo-form button {
+  padding: 0 20px;
+  border-radius: 14px;
+  border: none;
+  background: #5b52e5;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===============================
+   PHOTO GRID
+================================ */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* ===============================
+   PHOTO ITEM
+================================ */
+.photo-item {
+  background: #eef2ff;
+  border-radius: 18px;
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.photo-item img {
+  border-radius: 12px;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.photo-item p {
+  font-weight: 600;
+}
+
+.photo-item button {
+  background: rgba(255,255,255,0.4);
+  border: none;
+  border-radius: 10px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+/* ===============================
+   LOAD MORE
+================================ */
+.photos-section > button {
+  margin: 28px auto 0;
+  display: block;
+  padding: 10px 24px;
+  border-radius: 14px;
+  border: none;
+  background: #5b52e5;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 700px) {
+  .album-list {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .album-form,
+  .photo-form {
+    flex-direction: column;
+  }
+
+  .album-form button,
+  .photo-form button {
+    height: 48px;
+  }
+}

@@ -1,0 +1,70 @@
+.info-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* רקע מעט שקוף יותר */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.info-modal {
+  background: white;
+  border-radius: 12px; /* עיגול עדין יותר */
+  padding: 20px; /* צמצום מ-30px */
+  width: 85%;
+  max-width: 380px; /* הקטנה מ-480px */
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.info-modal h2 {
+  font-size: 1.4rem; /* הקטנת הכותרת הראשית */
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 18px; /* הקטנת ה-X */
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+.info-section {
+  margin-top: 12px; /* צמצום הרווח בין הסקשנים */
+  font-size: 0.9rem; /* הקטנת הטקסט הכללי */
+}
+
+.info-section h4 {
+  margin-bottom: 4px;
+  font-size: 1rem;
+  color: #4f46e5;
+  border-bottom: 1px solid #f0f0f0; /* הוספת קו עדין להפרדה */
+  padding-bottom: 2px;
+}
+
+.info-section p {
+  margin: 4px 0; /* צמצום הרווח בין שורות הטקסט */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* אפקט כניסה עדין מלמעלה */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
